@@ -71,7 +71,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/LeaderF'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
-
+Plug 'posva/vim-vue'
 call plug#end()
 
 if !exists('g:airline_symbols')
