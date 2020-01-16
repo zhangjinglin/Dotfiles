@@ -69,9 +69,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/LeaderF'
-Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
-Plug 'posva/vim-vue'
+
 call plug#end()
 
 if !exists('g:airline_symbols')
@@ -88,4 +86,3 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
 
-let g:user_emmet_leader_key=";"
