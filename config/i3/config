@@ -1,0 +1,237 @@
+
+############################################
+#### Define the Mod key = Super
+############################################
+set $mod Mod4
+
+############################################
+#### Display Settings
+############################################
+#exec --no-startup-id xrandr --output eDP1 --mode 1920x1080 --output DP1 --mode 1024x768 --right-of eDP1
+
+
+############################################
+#### Font Settings
+############################################
+font pango:MesloLGS NF Regular 13
+
+############################################
+#### Workspace Settings
+############################################
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+
+
+############################################
+#### assign application to workspace
+############################################
+# you can find the class with the program xprop
+
+# Workspace 1 browser related
+#assign [class="Firefox|Vivaldi-stable|Vivaldi-snapshot|Opera"]                      → 1
+#assign [class="Chromium|Google-chrome"]                                             → 1
+
+
+############################################
+#### Menu Settings
+############################################
+
+bindsym $mod+space exec --no-startup-id rofi -show run -theme solarized_alternate -font "Cascadia Code 20"
+
+
+############################################
+#### exit i3 (logs you out of your X session) 
+############################################
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+
+############################################
+#### reload changed configuration
+############################################
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+
+############################################
+#### Quit an applications
+############################################
+# kill focused window
+bindsym $mod+q kill
+
+
+############################################
+#### Moving around in i3
+############################################
+
+# next/previous workspace
+bindsym $mod+Tab workspace back_and_forth
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+############################################
+#### Tiling parameters
+############################################
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+
+############################################
+#### Resize
+############################################
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+############################################
+#### Start aplication
+############################################
+
+# Gnome Keyring
+exec --no-startup-id gnome-keyring-daemon --start &
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
+
+# Vmware
+# exec --no-startup-id vmware-user-suid-wrapper &
+
+
+# exec --no-startup-id picom
+exec --no-startup-id fcitx &
+exec --no-startup-id feh --bg-scale ~/Wallpaper/backgound.jpg &
+exec --no-startup-id nm-applet &
+
+
+# exec --no-startup-id setxkbmap -option ctrl:nocaps
+
+# Turn off Display in 60 seconds
+exec --no-startup-id xset s 60 60
+
+
+############################################
+#### Application shortcuts
+############################################
+
+bindsym $mod+g exec --no-startup-id google-chrome-stable
+bindsym $mod+c exec --no-startup-id code
+bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Shift+Return exec --no-startup-id pcmanfm
+
+
+############################################
+#### Sound
+############################################
+
+exec --no-startup-id amixer sset Master unmute &
+# surface pro 3
+# exec --no-startup-id amixer -c 1 sset Master unmute
+# exec --no-startup-id amixer -c 1 sset Speaker unmute
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master mute
+
+
+############################################
+#### Gaps
+############################################
+
+gaps inner 5
+gaps outer 5
