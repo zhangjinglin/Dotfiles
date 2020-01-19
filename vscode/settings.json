@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'Input Mono', 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 16,
     "editor.fontLigatures": true,
     "files.autoSave": "onFocusChange",
@@ -48,12 +48,16 @@
         {
             "before": ["<leader>", "l"],
             "after": ["$"]
-        },
+        }
     ],
+    "vim.handleKeys": {
+        "<C-k>": false
+    },
     "workbench.colorCustomizations": {
         "statusBar.background": "#8FBCBB",
         "statusBar.noFolderBackground": "#8FBCBB",
         "statusBar.debuggingBackground": "#8FBCBB",
         "statusBar.foreground": "#434C5E"
-    }
+    },
+    "window.zoomLevel": 3
 }
