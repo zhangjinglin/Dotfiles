@@ -202,6 +202,8 @@ exec --no-startup-id nm-applet &
 # Turn off Display in 60 seconds
 exec --no-startup-id xset s 60 60
 
+# Screen paint
+exec --no-startup-id gromit-mpx 
 
 ############################################
 #### Application shortcuts
