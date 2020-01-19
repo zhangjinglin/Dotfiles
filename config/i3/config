@@ -58,7 +58,7 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 #### Menu Settings
 ############################################
 
-bindsym $mod+space exec --no-startup-id rofi -show run -theme solarized_alternate -font "Cascadia Code 20"
+bindsym $mod+space exec --no-startup-id rofi -show run -theme solarized_alternate -font "Cascadia Code 13"
 
 
 ############################################
@@ -191,7 +191,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 # exec --no-startup-id vmware-user-suid-wrapper &
 
 
-# exec --no-startup-id picom
+exec --no-startup-id picom
 exec --no-startup-id fcitx &
 exec --no-startup-id feh --bg-scale ~/Wallpaper/backgound.jpg &
 exec --no-startup-id nm-applet &
