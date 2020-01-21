@@ -73,11 +73,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-let g:airline_powerline_fonts = 1
-let g:airline_symbols.linenr = "\uF85B"
-let g:airline_left_sep = "\uE0B4"
-let g:airline_right_sep = "\uE0B6"
-let g:airline_theme='simple'
+let g:airline_powerline_fonts = 0
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-overwin-f2)

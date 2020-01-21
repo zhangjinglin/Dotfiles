@@ -2,10 +2,10 @@
     "editor.fontFamily": "'Source Code Variable Semibold', 'Fira Code Retina', 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 24,
     "editor.fontLigatures": true,
+    "editor.autoIndent": true,
     "files.autoSave": "onFocusChange",
     "explorer.openEditors.visible": 0,
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "'DelugiaCode NF'",
     "terminal.integrated.lineHeight": 1.3,
     "vim.easymotion": true,
     "vim.easymotionMarkerHeight": 24,
@@ -62,5 +62,11 @@
     },
     "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
-    "workbench.activityBar.visible": true
+    "workbench.activityBar.visible": true,
+    "powermode.enabled": true,
+    "powermode.presets": "flames",
+    "workbench.colorTheme": "Solarized Dark",
+    "terminal.integrated.fontFamily": "'Source code Variable'",
+    "terminal.integrated.fontWeight": "700",
+    "workbench.editor.highlightModifiedTabs": true
 }
